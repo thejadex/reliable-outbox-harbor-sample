@@ -1,0 +1,27 @@
+test_ack_boundary_and_stale_token_no_mutation (__main__.Contract.test_ack_boundary_and_stale_token_no_mutation) ... ok
+test_bad_arguments_leave_state_unchanged (__main__.Contract.test_bad_arguments_leave_state_unchanged) ... ok
+test_canonical_identity_and_conflict (__main__.Contract.test_canonical_identity_and_conflict) ... ok
+test_commit_order_not_event_id_or_tenant (__main__.Contract.test_commit_order_not_event_id_or_tenant) ... ok
+test_concurrent_claims_do_not_overlap (__main__.Contract.test_concurrent_claims_do_not_overlap) ... ok
+test_concurrent_conflicting_submission (__main__.Contract.test_concurrent_conflicting_submission) ... ok
+test_concurrent_initialization_and_duplicate_submission (__main__.Contract.test_concurrent_initialization_and_duplicate_submission) ... ok
+test_due_time_precedes_insertion_order (__main__.Contract.test_due_time_precedes_insertion_order) ... ok
+test_expiry_recovery_on_empty_claim (__main__.Contract.test_expiry_recovery_on_empty_claim) ... ok
+test_fifo_heads_and_independent_partitions (__main__.Contract.test_fifo_heads_and_independent_partitions) ... ok
+test_five_crashes_eventually_release_partition (__main__.Contract.test_five_crashes_eventually_release_partition) ... ok
+test_initial_empty_state (__main__.Contract.test_initial_empty_state) ... ok
+test_invalid_completion_ownership_and_types (__main__.Contract.test_invalid_completion_ownership_and_types) ... ok
+test_invalid_payloads_are_atomic (__main__.Contract.test_invalid_payloads_are_atomic) ... ok
+test_permanent_failure_preserves_available_at (__main__.Contract.test_permanent_failure_preserves_available_at) ... ok
+test_reopen_and_killed_worker_persistence (__main__.Contract.test_reopen_and_killed_worker_persistence) ... ok
+test_retry_blocks_partition_until_exact_boundary (__main__.Contract.test_retry_blocks_partition_until_exact_boundary) ... ok
+test_retry_exhaustion_and_dead_release (__main__.Contract.test_retry_exhaustion_and_dead_release) ... ok
+test_seeded_delivery_replay (__main__.Contract.test_seeded_delivery_replay) ... ok
+test_snapshot_and_claim_schema (__main__.Contract.test_snapshot_and_claim_schema) ... ok
+test_subscription_snapshot_and_empty_event (__main__.Contract.test_subscription_snapshot_and_empty_event) ... ok
+test_tenant_isolation (__main__.Contract.test_tenant_isolation) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 4.856s
+
+OK

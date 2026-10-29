@@ -1,0 +1,298 @@
+test_ack_boundary_and_stale_token_no_mutation (__main__.Contract.test_ack_boundary_and_stale_token_no_mutation) ... ERROR
+test_bad_arguments_leave_state_unchanged (__main__.Contract.test_bad_arguments_leave_state_unchanged) ... ERROR
+test_canonical_identity_and_conflict (__main__.Contract.test_canonical_identity_and_conflict) ... ERROR
+test_commit_order_not_event_id_or_tenant (__main__.Contract.test_commit_order_not_event_id_or_tenant) ... ERROR
+test_concurrent_claims_do_not_overlap (__main__.Contract.test_concurrent_claims_do_not_overlap) ... ERROR
+test_concurrent_conflicting_submission (__main__.Contract.test_concurrent_conflicting_submission) ... ERROR
+test_concurrent_initialization_and_duplicate_submission (__main__.Contract.test_concurrent_initialization_and_duplicate_submission) ... ERROR
+test_due_time_precedes_insertion_order (__main__.Contract.test_due_time_precedes_insertion_order) ... ERROR
+test_expiry_recovery_on_empty_claim (__main__.Contract.test_expiry_recovery_on_empty_claim) ... ERROR
+test_fifo_heads_and_independent_partitions (__main__.Contract.test_fifo_heads_and_independent_partitions) ... ERROR
+test_five_crashes_eventually_release_partition (__main__.Contract.test_five_crashes_eventually_release_partition) ... ERROR
+test_initial_empty_state (__main__.Contract.test_initial_empty_state) ... ERROR
+test_invalid_completion_ownership_and_types (__main__.Contract.test_invalid_completion_ownership_and_types) ... ERROR
+test_invalid_payloads_are_atomic (__main__.Contract.test_invalid_payloads_are_atomic) ... ERROR
+test_permanent_failure_preserves_available_at (__main__.Contract.test_permanent_failure_preserves_available_at) ... ERROR
+test_reopen_and_killed_worker_persistence (__main__.Contract.test_reopen_and_killed_worker_persistence) ... ERROR
+test_retry_blocks_partition_until_exact_boundary (__main__.Contract.test_retry_blocks_partition_until_exact_boundary) ... ERROR
+test_retry_exhaustion_and_dead_release (__main__.Contract.test_retry_exhaustion_and_dead_release) ... ERROR
+test_seeded_delivery_replay (__main__.Contract.test_seeded_delivery_replay) ... ERROR
+test_snapshot_and_claim_schema (__main__.Contract.test_snapshot_and_claim_schema) ... ERROR
+test_subscription_snapshot_and_empty_event (__main__.Contract.test_subscription_snapshot_and_empty_event) ... ERROR
+test_tenant_isolation (__main__.Contract.test_tenant_isolation) ... ERROR
+
+======================================================================
+ERROR: test_ack_boundary_and_stale_token_no_mutation (__main__.Contract.test_ack_boundary_and_stale_token_no_mutation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tests/checks.py", line 156, in test_ack_boundary_and_stale_token_no_mutation
+    self.seed()
+  File "/tests/checks.py", line 62, in seed
+    self.s.call('register',tenant,endpoint)
+  File "/tests/checks.py", line 30, in call
+    raise RuntimeError(str(response))
+RuntimeError: {'ok': False, 'error': 'NotImplementedError', 'message': 'Implement endpoint registration'}
+
+======================================================================
+ERROR: test_bad_arguments_leave_state_unchanged (__main__.Contract.test_bad_arguments_leave_state_unchanged)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tests/checks.py", line 234, in test_bad_arguments_leave_state_unchanged
+    self.seed()
+  File "/tests/checks.py", line 62, in seed
+    self.s.call('register',tenant,endpoint)
+  File "/tests/checks.py", line 30, in call
+    raise RuntimeError(str(response))
+RuntimeError: {'ok': False, 'error': 'NotImplementedError', 'message': 'Implement endpoint registration'}
+
+======================================================================
+ERROR: test_canonical_identity_and_conflict (__main__.Contract.test_canonical_identity_and_conflict)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tests/checks.py", line 89, in test_canonical_identity_and_conflict
+    self.seed(payload={'z':[1,{'β':'λ'}],'a':True})
+  File "/tests/checks.py", line 62, in seed
+    self.s.call('register',tenant,endpoint)
+  File "/tests/checks.py", line 30, in call
+    raise RuntimeError(str(response))
+RuntimeError: {'ok': False, 'error': 'NotImplementedError', 'message': 'Implement endpoint registration'}
+
+======================================================================
+ERROR: test_commit_order_not_event_id_or_tenant (__main__.Contract.test_commit_order_not_event_id_or_tenant)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tests/checks.py", line 121, in test_commit_order_not_event_id_or_tenant
+    self.seed(('b','a'),tenant='z',event='z')
+  File "/tests/checks.py", line 62, in seed
+    self.s.call('register',tenant,endpoint)
+  File "/tests/checks.py", line 30, in call
+    raise RuntimeError(str(response))
+RuntimeError: {'ok': False, 'error': 'NotImplementedError', 'message': 'Implement endpoint registration'}
+
+======================================================================
+ERROR: test_concurrent_claims_do_not_overlap (__main__.Contract.test_concurrent_claims_do_not_overlap)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tests/checks.py", line 288, in test_concurrent_claims_do_not_overlap
+    self.seed(tuple('endpoint-%02d'%i for i in range(40)))
+  File "/tests/checks.py", line 62, in seed
+    self.s.call('register',tenant,endpoint)
+  File "/tests/checks.py", line 30, in call
+    raise RuntimeError(str(response))
+RuntimeError: {'ok': False, 'error': 'NotImplementedError', 'message': 'Implement endpoint registration'}
+
+======================================================================
+ERROR: test_concurrent_conflicting_submission (__main__.Contract.test_concurrent_conflicting_submission)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tests/checks.py", line 273, in test_concurrent_conflicting_submission
+    self.s.call('register','t','a')
+  File "/tests/checks.py", line 30, in call
+    raise RuntimeError(str(response))
+RuntimeError: {'ok': False, 'error': 'NotImplementedError', 'message': 'Implement endpoint registration'}
+
+======================================================================
+ERROR: test_concurrent_initialization_and_duplicate_submission (__main__.Contract.test_concurrent_initialization_and_duplicate_submission)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tests/checks.py", line 269, in test_concurrent_initialization_and_duplicate_submission
+    self.assertEqual(list(pool.map(action,range(16))),[2]*16)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tests/checks.py", line 265, in action
+    client.call('register','t','a')
+  File "/tests/checks.py", line 30, in call
+    raise RuntimeError(str(response))
+RuntimeError: {'ok': False, 'error': 'NotImplementedError', 'message': 'Implement endpoint registration'}
+
+======================================================================
+ERROR: test_due_time_precedes_insertion_order (__main__.Contract.test_due_time_precedes_insertion_order)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tests/checks.py", line 138, in test_due_time_precedes_insertion_order
+    self.seed(('a',),event='first')
+  File "/tests/checks.py", line 62, in seed
+    self.s.call('register',tenant,endpoint)
+  File "/tests/checks.py", line 30, in call
+    raise RuntimeError(str(response))
+RuntimeError: {'ok': False, 'error': 'NotImplementedError', 'message': 'Implement endpoint registration'}
+
+======================================================================
+ERROR: test_expiry_recovery_on_empty_claim (__main__.Contract.test_expiry_recovery_on_empty_claim)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tests/checks.py", line 205, in test_expiry_recovery_on_empty_claim
+    self.seed()
+  File "/tests/checks.py", line 62, in seed
+    self.s.call('register',tenant,endpoint)
+  File "/tests/checks.py", line 30, in call
+    raise RuntimeError(str(response))
+RuntimeError: {'ok': False, 'error': 'NotImplementedError', 'message': 'Implement endpoint registration'}
+
+======================================================================
+ERROR: test_fifo_heads_and_independent_partitions (__main__.Contract.test_fifo_heads_and_independent_partitions)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tests/checks.py", line 127, in test_fifo_heads_and_independent_partitions
+    self.seed(('a','b'))
+  File "/tests/checks.py", line 62, in seed
+    self.s.call('register',tenant,endpoint)
+  File "/tests/checks.py", line 30, in call
+    raise RuntimeError(str(response))
+RuntimeError: {'ok': False, 'error': 'NotImplementedError', 'message': 'Implement endpoint registration'}
+
+======================================================================
+ERROR: test_five_crashes_eventually_release_partition (__main__.Contract.test_five_crashes_eventually_release_partition)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tests/checks.py", line 192, in test_five_crashes_eventually_release_partition
+    self.seed()
+  File "/tests/checks.py", line 62, in seed
+    self.s.call('register',tenant,endpoint)
+  File "/tests/checks.py", line 30, in call
+    raise RuntimeError(str(response))
+RuntimeError: {'ok': False, 'error': 'NotImplementedError', 'message': 'Implement endpoint registration'}
+
+======================================================================
+ERROR: test_initial_empty_state (__main__.Contract.test_initial_empty_state)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tests/checks.py", line 72, in test_initial_empty_state
+    self.assertEqual(self.s.call('snapshot','absent'),[])
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tests/checks.py", line 30, in call
+    raise RuntimeError(str(response))
+RuntimeError: {'ok': False, 'error': 'NotImplementedError', 'message': 'Implement a consistent delivery snapshot'}
+
+======================================================================
+ERROR: test_invalid_completion_ownership_and_types (__main__.Contract.test_invalid_completion_ownership_and_types)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tests/checks.py", line 249, in test_invalid_completion_ownership_and_types
+    self.seed()
+  File "/tests/checks.py", line 62, in seed
+    self.s.call('register',tenant,endpoint)
+  File "/tests/checks.py", line 30, in call
+    raise RuntimeError(str(response))
+RuntimeError: {'ok': False, 'error': 'NotImplementedError', 'message': 'Implement endpoint registration'}
+
+======================================================================
+ERROR: test_invalid_payloads_are_atomic (__main__.Contract.test_invalid_payloads_are_atomic)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tests/checks.py", line 225, in test_invalid_payloads_are_atomic
+    self.s.call('register','t','a')
+  File "/tests/checks.py", line 30, in call
+    raise RuntimeError(str(response))
+RuntimeError: {'ok': False, 'error': 'NotImplementedError', 'message': 'Implement endpoint registration'}
+
+======================================================================
+ERROR: test_permanent_failure_preserves_available_at (__main__.Contract.test_permanent_failure_preserves_available_at)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tests/checks.py", line 185, in test_permanent_failure_preserves_available_at
+    self.seed(now=4)
+  File "/tests/checks.py", line 62, in seed
+    self.s.call('register',tenant,endpoint)
+  File "/tests/checks.py", line 30, in call
+    raise RuntimeError(str(response))
+RuntimeError: {'ok': False, 'error': 'NotImplementedError', 'message': 'Implement endpoint registration'}
+
+======================================================================
+ERROR: test_reopen_and_killed_worker_persistence (__main__.Contract.test_reopen_and_killed_worker_persistence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tests/checks.py", line 213, in test_reopen_and_killed_worker_persistence
+    self.seed()
+  File "/tests/checks.py", line 62, in seed
+    self.s.call('register',tenant,endpoint)
+  File "/tests/checks.py", line 30, in call
+    raise RuntimeError(str(response))
+RuntimeError: {'ok': False, 'error': 'NotImplementedError', 'message': 'Implement endpoint registration'}
+
+======================================================================
+ERROR: test_retry_blocks_partition_until_exact_boundary (__main__.Contract.test_retry_blocks_partition_until_exact_boundary)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tests/checks.py", line 146, in test_retry_blocks_partition_until_exact_boundary
+    self.seed()
+  File "/tests/checks.py", line 62, in seed
+    self.s.call('register',tenant,endpoint)
+  File "/tests/checks.py", line 30, in call
+    raise RuntimeError(str(response))
+RuntimeError: {'ok': False, 'error': 'NotImplementedError', 'message': 'Implement endpoint registration'}
+
+======================================================================
+ERROR: test_retry_exhaustion_and_dead_release (__main__.Contract.test_retry_exhaustion_and_dead_release)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tests/checks.py", line 168, in test_retry_exhaustion_and_dead_release
+    self.seed()
+  File "/tests/checks.py", line 62, in seed
+    self.s.call('register',tenant,endpoint)
+  File "/tests/checks.py", line 30, in call
+    raise RuntimeError(str(response))
+RuntimeError: {'ok': False, 'error': 'NotImplementedError', 'message': 'Implement endpoint registration'}
+
+======================================================================
+ERROR: test_seeded_delivery_replay (__main__.Contract.test_seeded_delivery_replay)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tests/checks.py", line 303, in test_seeded_delivery_replay
+    self.s.call('register',tenant,endpoint)
+  File "/tests/checks.py", line 30, in call
+    raise RuntimeError(str(response))
+RuntimeError: {'ok': False, 'error': 'NotImplementedError', 'message': 'Implement endpoint registration'}
+
+======================================================================
+ERROR: test_snapshot_and_claim_schema (__main__.Contract.test_snapshot_and_claim_schema)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tests/checks.py", line 97, in test_snapshot_and_claim_schema
+    self.seed(('b','a'),now=2.5,payload={'list':[1,None,False]})
+  File "/tests/checks.py", line 62, in seed
+    self.s.call('register',tenant,endpoint)
+  File "/tests/checks.py", line 30, in call
+    raise RuntimeError(str(response))
+RuntimeError: {'ok': False, 'error': 'NotImplementedError', 'message': 'Implement endpoint registration'}
+
+======================================================================
+ERROR: test_subscription_snapshot_and_empty_event (__main__.Contract.test_subscription_snapshot_and_empty_event)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tests/checks.py", line 76, in test_subscription_snapshot_and_empty_event
+    self.assertEqual(self.s.call('submit','t','empty',{},now=0),0)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tests/checks.py", line 30, in call
+    raise RuntimeError(str(response))
+RuntimeError: {'ok': False, 'error': 'NotImplementedError', 'message': 'Implement atomic idempotent fanout'}
+
+======================================================================
+ERROR: test_tenant_isolation (__main__.Contract.test_tenant_isolation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tests/checks.py", line 109, in test_tenant_isolation
+    self.seed(tenant='left')
+  File "/tests/checks.py", line 62, in seed
+    self.s.call('register',tenant,endpoint)
+  File "/tests/checks.py", line 30, in call
+    raise RuntimeError(str(response))
+RuntimeError: {'ok': False, 'error': 'NotImplementedError', 'message': 'Implement endpoint registration'}
+
+----------------------------------------------------------------------
+Ran 22 tests in 1.420s
+
+FAILED (errors=22)

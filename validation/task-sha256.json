@@ -1,0 +1,12 @@
+{
+  "AUTHORSHIP.md": "aaaffba12a51cd5e82b732f1b4f9104d4594bbb7a7a78a3ccd6f17b008f42323",
+  "environment/Dockerfile": "e7609186364ecdfe851e00214ef6937f896bcd1e5a896c3eecf108b4998d4af6",
+  "environment/outbox.py": "13a1e9a1c24bb15e3daa9b8bf48ac0201b34b2be73409f5f7e52219ec70fe7d5",
+  "instruction.md": "f51e24b55068577ad032ecff84b543b4ae21d4dba4391c466a66dbc9ba661720",
+  "solution/reference_outbox.py": "ab52a5c414671cef13ff7ee084125b963f771a0620c97174dda18804384ac962",
+  "solution/solve.sh": "e441c0b94128133a5f89ed123649a680f9ea6783c894967e6fe549b2b58c9a7a",
+  "task.toml": "729063aeac9a89b338e71e1ff116e7a88ba89d714a42d1584b7b7e7a1ba0449c",
+  "tests/bridge.py": "d959729c5667be4ac60d15bcf5d546023d6227631c3efc2a2770a751363d3185",
+  "tests/checks.py": "2fd7ea8f6773df11fd449ccd4211b3a58ab683c90b4ee86a138a81b599c96ffc",
+  "tests/test.sh": "d5fe1183399e58459da812a059a35c24ce2c62f86cf569a135a34c48f5161220"
+}

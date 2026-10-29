@@ -1,0 +1,25 @@
+version = "1.0"
+
+[task]
+name = "collaborative-samples/reliable-outbox"
+description = "Implement a durable multi-tenant event outbox with atomic fanout, FIFO partitions, fenced leases, retries, and recovery."
+
+[metadata]
+author_name = "User and OpenAI Codex (collaborative prototype)"
+difficulty = "hard"
+category = "software-engineering"
+tags = ["sqlite", "transactions", "concurrency", "reliability"]
+
+[agent]
+timeout_sec = 72000
+user = "agent"
+
+[verifier]
+timeout_sec = 300
+
+[environment]
+build_timeout_sec = 600
+cpus = 2
+memory_mb = 4096
+storage_mb = 10240
+allow_internet = false

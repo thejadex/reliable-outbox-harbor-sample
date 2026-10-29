@@ -1,0 +1,23 @@
+{
+  "validated_date": "2026-10-29",
+  "harbor_version": "0.8.0",
+  "checker_line": "FSWE-CHECK v1 PASS collaborative-samples/reliable-outbox d10444c82850",
+  "scores": {
+    "oracle": {
+      "mean": 1.0,
+      "trials": 1,
+      "harbor_errors": 0,
+      "reward": 1.0
+    },
+    "nop": {
+      "mean": 0.0,
+      "trials": 1,
+      "harbor_errors": 0,
+      "reward": 0.0
+    }
+  },
+  "checker_sha256": "7c6de0c78cb4acb6175c63f0280727f162fdb501c85570bf7f47d07cd0137520",
+  "authorship": "User and OpenAI Codex; see task/AUTHORSHIP.md",
+  "difficulty_calibration": "Not established",
+  "organizer_eligibility": "Not established"
+}
